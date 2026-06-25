@@ -1,0 +1,116 @@
+# Alacritty configuration for Windows + WSL
+# Location: C:\Users\Dev\AppData\Roaming\alacritty\alacritty.toml
+# Tested for Alacritty 0.17.x TOML syntax.
+
+[general]
+import = "C:\\Users\\Dev\\AppData\\Roaming\\alacritty\\alacritty-wsl.toml"
+live_config_reload = true
+ipc_socket = true
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+dimensions = { columns = 120, lines = 32 }
+padding = { x = 8, y = 8 }
+dynamic_padding = true
+opacity = 0.92
+decorations = "None"
+startup_mode = "Maximized"
+blur = true
+dynamic_title = true
+
+[scrolling]
+history = 50000
+multiplier = 3
+
+[font]
+size = 14.0
+
+[font.normal]
+family = "CaskaydiaCove NF"
+style = "Regular"
+
+[font.bold]
+family = "CaskaydiaCove NF"
+style = "SemiBold"
+
+[font.italic]
+family = "CaskaydiaCove NF"
+style = "Italic"
+
+[font.bold_italic]
+family = "CaskaydiaCove NF"
+style = "SemiBold Italic"
+
+[colors.primary]
+background = "#1E1E2E"
+foreground = "#CDD6F4"
+
+[colors.cursor]
+text = "#1E1E2E"
+cursor = "#F5E0DC"
+
+[colors.selection]
+text = "#1E1E2E"
+background = "#F5E0DC"
+
+[colors.normal]
+black = "#45475A"
+red = "#F38BA8"
+green = "#A6E3A1"
+yellow = "#F9E2AF"
+blue = "#89B4FA"
+magenta = "#F5C2E7"
+cyan = "#94E2D5"
+white = "#BAC2DE"
+
+[colors.bright]
+black = "#585B70"
+red = "#F38BA8"
+green = "#A6E3A1"
+yellow = "#F9E2AF"
+blue = "#89B4FA"
+magenta = "#F5C2E7"
+cyan = "#94E2D5"
+white = "#A6ADC8"
+
+[bell]
+animation = "Ease"# | "EaseOut" | "EaseOutSine" | "EaseOutQuad" | "EaseOutCubic" | "EaseOutQuart" | "EaseOutQuint" | "EaseOutExpo" | "EaseOutCirc" | "Linear"
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+unfocused_hollow = true
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+save_to_clipboard = true# | false
+
+[mouse]
+hide_when_typing = true
+
+[terminal]
+# Default shell: WSL in your Linux home directory.
+# If you prefer PowerShell 7, replace this with:
+# shell = { program = 'C:\Program Files\PowerShell\7\pwsh.exe', args = ['-NoLogo'] }
+shell = { program = "wsl.exe", args = ["--cd", "~"] }
+osc52 = "OnlyCopy"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Control|Shift"
+action = "CreateNewWindow"
+
+[[keyboard.bindings]]
+key = "F11"
+action = "ToggleFullscreen"
