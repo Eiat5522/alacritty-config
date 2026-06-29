@@ -3,10 +3,11 @@
 # Tested for Alacritty 0.17.x TOML syntax.
 
 [general]
-import = "C:\\Users\\Dev\\AppData\\Roaming\\alacritty\\alacritty-wsl.toml"
 live_config_reload = true
 ipc_socket = true
-
+import = [
+  "C:\\Users\\Dev\\AppData\\Roaming\\alacritty\\themes\\tokyo-night.toml",
+]
 [env]
 TERM = "xterm-256color"
 
@@ -14,14 +15,14 @@ TERM = "xterm-256color"
 dimensions = { columns = 120, lines = 32 }
 padding = { x = 8, y = 8 }
 dynamic_padding = true
-opacity = 0.92
+opacity = 1
 decorations = "None"
 startup_mode = "Maximized"
 blur = true
 dynamic_title = true
 
 [scrolling]
-history = 50000
+history = 100000
 multiplier = 3
 
 [font]
@@ -76,7 +77,7 @@ cyan = "#94E2D5"
 white = "#A6ADC8"
 
 [bell]
-animation = "Ease"# | "EaseOut" | "EaseOutSine" | "EaseOutQuad" | "EaseOutCubic" | "EaseOutQuart" | "EaseOutQuint" | "EaseOutExpo" | "EaseOutCirc" | "Linear"
+animation = "Ease" # | "EaseOut" | "EaseOutSine" | "EaseOutQuad" | "EaseOutCubic" | "EaseOutQuart" | "EaseOutQuint" | "EaseOutExpo" | "EaseOutCirc" | "Linear"
 
 [cursor]
 style = { shape = "Beam", blinking = "On" }
@@ -84,7 +85,7 @@ unfocused_hollow = true
 
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
-save_to_clipboard = true# | false
+save_to_clipboard = true                      # | false
 
 [mouse]
 hide_when_typing = true
